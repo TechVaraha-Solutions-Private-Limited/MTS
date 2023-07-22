@@ -1,0 +1,113 @@
+:host
+{
+    color: rgb(10, 10, 10);
+  background-color: blue;
+ 
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 18rem;
+        margin-left: auto;
+        margin-right: auto;
+        background:  #01a2ff;  
+    }
+    .input-group-text
+        {
+        font-size:12px;
+        font-weight:bold;
+        font-weight: 500;
+        padding:5px;
+    }
+    #Logintxt{
+        font-family:'futura';
+        font-weight: 600;
+        font-size: 20px;
+       }
+       .ss{
+        width: 200px;
+    }
+    /* .form-select {
+        border-bottom: 2px solid red;
+        border: none;
+        border-bottom: 1px solid #e7e4e4e7;
+        background-color: transparent;
+      } */
+    
+      #browsers {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 200px;
+        border-radius: 0px;
+      }
+    
+}
+@media only screen and (min-width: 601px) {
+    .card {
+        margin-top: 10% !important;
+        width: 26rem;
+        margin-left: auto;
+        margin-right: auto;
+        background:   #01a2ff;   
+        padding: 1.5%;
+        padding-left: 2.5%;
+        padding-right: 2.5%;
+    }
+    .input-group-text {
+        font-size: 14px;
+        font-weight:bold;
+        font-weight: 500;
+    }
+    #getbtnid
+    {
+        width:25%;
+        height:40px;
+        border-radius:5px !important;
+    }
+   #Logintxt{
+    font-size: 30px;
+    font-family:'futura';
+    font-weight: 600;
+   }
+
+   .ss{
+    width: 270px !important;
+}
+
+
+  #browsers {
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 200px;
+    border-radius: 0px;
+  }
+
+}
+.input-group-text{
+background-color: rgb(202, 196, 196);
+color:black;
+}
+
+.input-group-text:hover{
+background-color:rgb(156, 162, 162);
+}
+
+/* mat-form-field,mat-select,mat-option
+{
+    background-color: #185a9d;
+} */
+
+.ss{
+   
+}
+.form-select {
+    border-bottom: 2px solid red;
+    border: none;
+    border-bottom: 1px solid #e7e4e4e7;
+    background-color: transparent;
+  }
+
+  #browsers {
+     /* Adjust the width as per your requirements */
+  }
+

@@ -1,0 +1,6 @@
+mat-toolbar {
+        position: relative;
+        background:  rgb(0, 125, 198);  
+        background: -webkit-linear-gradient(to right,  #020255,rgb(0, 125, 198)); 
+        background: linear-gradient(to right,   #020255,rgb(0, 125, 198));
+}

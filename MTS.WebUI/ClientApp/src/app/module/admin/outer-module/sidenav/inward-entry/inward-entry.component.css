@@ -1,0 +1,56 @@
+:host
+{
+    color: rgb(10, 10, 10);
+}
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 19rem;
+        margin-left: auto;
+        margin-right: auto;
+        background: beige;  
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    }
+    .input-group-text
+        {
+        font-size:12px;
+        font-weight:bold;
+        font-weight: 500;
+        padding:5px;
+
+    }
+
+}
+@media only screen and (min-width: 601px) {
+    .card {
+        width: 30rem;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgb(248, 248, 239);  
+        box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        padding: 1.5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        
+    }
+    .input-group-text {
+        font-size: 14px;
+        font-weight:bold;
+        font-weight: 400;
+    }
+    #getbtnid
+    {
+        width:25%;
+        height:40px;
+        border-radius:5px !important;
+    }
+   
+}
+.input-group-text{
+color:black;
+background-color: rgb(219, 219, 245);
+}
+
+.input-group-text:hover{
+background-color:rgb(158, 225, 241);
+}
+
