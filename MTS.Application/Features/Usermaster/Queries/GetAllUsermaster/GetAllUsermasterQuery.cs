@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Usermaster.Queries.GetAllUsermaster
 {
-    public record GetAllUsermasterQuery: IRequest<List<User>>;
+    public record GetAllUsermasterQuery: IRequest<List<GetAllUsermasterDto>>;
     
 }

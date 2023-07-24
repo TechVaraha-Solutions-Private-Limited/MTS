@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Usermaster.Queries.GetAllUsermaster
 {
-    public class GetAllUsermasterQueryHandler : IRequestHandler<GetAllUsermasterQuery, List<User>>
+    public class GetAllUsermasterQueryHandler : IRequestHandler<GetAllUsermasterQuery, List<GetAllUsermasterDto>>
     {
         private readonly IMapper _mapper;
         private readonly IUsermasterRepository _usermasterRepository;
@@ -23,13 +23,13 @@ namespace MTS.Application.Features.Usermaster.Queries.GetAllUsermaster
             _usermasterRepository = usermasterRepository;
             _logger = logger;
         }
-        public async Task<List<User>> Handle(GetAllUsermasterQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetAllUsermasterDto>> Handle(GetAllUsermasterQuery request, CancellationToken cancellationToken)
         {
 
             //Query the Database
             var usermasters = await _usermasterRepository.GetAsync();
             //Convert data objects to DTO objects
-            var data = _mapper.Map<List<User>>(usermasters);
+            var data = _mapper.Map<List<GetAllUsermasterDto>>(usermasters);
 
 
             _logger.LogInformation("UserMaster Retreived Succesfully");

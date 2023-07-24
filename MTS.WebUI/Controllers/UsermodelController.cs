@@ -16,7 +16,7 @@ namespace MTS.WebUI.Controllers
             _mediator = mediator;
         }
         [HttpGet]
-        public async Task<List<User>> Get()
+        public async Task<List<GetAllUsermasterDto>> Get()
         {
             var userMasters = await _mediator.Send(new GetAllUsermasterQuery());
             return userMasters;

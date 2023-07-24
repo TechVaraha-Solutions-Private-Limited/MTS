@@ -13,7 +13,7 @@ namespace MTS.Application.MappingProfile
     {
         public UserMasterProfile()
         {
-            CreateMap<User, TblUsermaster>().ReverseMap();
+            CreateMap<GetAllUsermasterDto, TblUsermaster>().ReverseMap();
             
         }
     }

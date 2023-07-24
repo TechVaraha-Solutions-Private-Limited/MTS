@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Usermaster.Queries.GetAllUsermaster
 {
-    public class User
+    public class GetAllUsermasterDto
     {
         public string Username { get; set; } = null!;
 
