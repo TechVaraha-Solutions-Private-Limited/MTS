@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@angular/animations": "^16.1.6",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.0",
+    "@typescript-eslint/parser": "^6.2.0",
+    "eslint": "^8.45.0"
+  }
+}
