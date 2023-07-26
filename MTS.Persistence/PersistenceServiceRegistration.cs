@@ -18,6 +18,7 @@ namespace MTS.Persistence
             });
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IUsermasterRepository, UsermasterRepository>();
+            services.AddScoped<IUserMenuRepository, UserMenuRepository>();
             return services;
         }
 
