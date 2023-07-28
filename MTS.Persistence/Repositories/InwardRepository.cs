@@ -22,8 +22,11 @@ namespace MTS.Persistence.Repositories
 
         public async Task<List<TblQuarantine>> GetGrnDetails(string grnNo)
         {
-            var inwarddetails =await _context.TblQuarantine.Where(u => u.GRNNO == grnNo).ToListAsync();
+            var inwarddetails = await _context.TblQuarantine.FromSql($"GetGrndetails {grnNo}").ToListAsync();
+            //var inwarddetails =await _context.TblQuarantine.Where(u => u.GRNNO == grnNo).ToListAsync();
             return inwarddetails;
         }
+
+       
     }
 }

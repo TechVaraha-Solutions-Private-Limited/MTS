@@ -20,4 +20,6 @@ public class MtstestContext :DbContext
     public virtual DbSet<TblUsermaster> TblUsermaster { get; set; }
     public virtual DbSet<TblMenu> TblMenu { get; set; } 
     public virtual DbSet<TblQuarantine> TblQuarantine { get; set; }
+    public virtual DbSet<TblCalibrationFrequency> TblCalibrationFrequency { get; set;}
+
 }

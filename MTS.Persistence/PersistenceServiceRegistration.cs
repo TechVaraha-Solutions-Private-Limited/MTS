@@ -20,6 +20,7 @@ namespace MTS.Persistence
             services.AddScoped<IUsermasterRepository, UsermasterRepository>();
             services.AddScoped<IUserMenuRepository, UserMenuRepository>();
             services.AddScoped<IInwardRepository, InwardRepository>();
+            services.AddScoped<ICalibrationRepository, CalibrationRepository>();
             return services;
         }
 
