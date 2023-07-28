@@ -16,13 +16,12 @@
         font-weight:bold;
         font-weight: 500;
         padding:5px;
-
     }
 
 }
 @media only screen and (min-width: 601px) {
     .card {
-        width: 30rem;
+        width: 35rem;
         margin-left: auto;
         margin-right: auto;
         background: rgb(248, 248, 239);  
@@ -54,3 +53,17 @@ background-color: rgb(219, 219, 245);
 background-color:rgb(158, 225, 241);
 }
 
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #ccc;
+  border: none;
+}
+.table-primary {
+  border-right: 1px solid gray;
+}

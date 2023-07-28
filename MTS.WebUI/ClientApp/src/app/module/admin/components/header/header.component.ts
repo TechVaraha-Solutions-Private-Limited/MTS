@@ -121,12 +121,12 @@ menuItemsByUsername: { [key: string]: any[] } = {
       children: [
         {
           title: 'Material Status Label Printing',
-          route: "/rm-pm",
+          route: "/statuslabelprinting",
           icon: 'subtitles'
         },
         {
           title: 'Material Staus Scanning',
-          route: '/submenu1-2',
+          route: '',
           icon: 'subtitles'
         },
         {

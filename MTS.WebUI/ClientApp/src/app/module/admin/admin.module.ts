@@ -7,7 +7,9 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list'; 
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatMenuModule} from '@angular/material/menu'; 
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTableModule } from '@angular/material/table';
+
 // import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [ 
@@ -27,6 +29,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSidenavModule,
     MatCardModule,
     MatMenuModule,
+    MatTableModule,
+   
   ],
   exports: [
     CommonModule,
@@ -37,7 +41,9 @@ import {MatMenuModule} from '@angular/material/menu';
     MatDividerModule,
     MatSidenavModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+   
   ]
 })
 export class AdminModule { }

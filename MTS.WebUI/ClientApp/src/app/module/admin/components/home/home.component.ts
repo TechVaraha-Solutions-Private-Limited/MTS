@@ -121,7 +121,7 @@ export class HomeComponent {
         children: [
           {
             title: 'Material Status Label Printing',
-            route: "/rm-pm",
+            route: "/statuslabelprinting",
             icon: 'subtitles'
           },
           {

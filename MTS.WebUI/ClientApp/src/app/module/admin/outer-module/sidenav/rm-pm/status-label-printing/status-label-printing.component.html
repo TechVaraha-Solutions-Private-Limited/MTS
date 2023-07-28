@@ -1,0 +1,103 @@
+
+<div class="card mt-4">
+  <div class="card-body">
+    <h3 class="card-title " style="color:blue;margin-bottom:30px;">Status Printing</h3>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <!--<div class="input-group mb-3">
+    <span class="input-group-text p-2" id="basic-addon1">Scan Weighing Id</span>
+    <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+  </div>
+  <div style="align-content:center">
+    <button type="button" class="btn btn-primary" id="getWeightBtnid" style="width: 110px; height: 37px; margin-left: 72%"><small>Get Weight</small></button>
+  </div>-->
+
+    <div class="input-group mb-3" id="pur-getid" style="margin-right:20px ;">
+      <span class="input-group-text p-1" id="basic-addon1">GrnNo</span>
+      <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right: 5%;">
+      <button type="button" class="btn btn-primary" id="getbtnid">Get Data</button>
+    </div>
+
+    <hr>
+    <div class="input-group mb-3">
+      <span class="input-group-text p-2 " id="basic-addon2" style="background-color: #ffff80;">Search</span>
+      <!-- <input type="text" class="form-control" aria-label="Text input with dropdown button" style="background-color: #ffff80">-->
+      <button class="btn btn-outline-primary" style="background-color: #D3D3D3;" type="button" (click)="togglePrinterStatus()">Change Printer</button>
+    </div>
+    <!--Model-->
+    <div class="modal" tabindex="-1" *ngIf="printerStatus" style="display:block;top:20%">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Printer Configure</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="toggleclose()"></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group mb-3">
+              <span class="input-group-text p-2 " id="basic-addon1">Search</span>
+              <input type="text" class="form-control" placeholder="" [(ngModel)]="defaultselect1" />
+            </div>
+
+            <div class="card" style="width: 15rem;">
+              <div class="card-header">
+                Printers
+              </div>
+              <select class="list-group list-group-flush">
+                <option class="list-group-item">Select</option>
+                <option class="list-group-item" [value]='item.id' *ngFor="let item of printers" #temp>{{item.name}}</option>
+               <!-- <option class="list-group-item">{value}}</option>-->
+
+   <!--<option class="list-group-item">Printer 3</option>-->
+              </select>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="toggleclose()">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+   
+    <!--Table-->
+    <div>
+      <div class="table-responsive bg-white">
+        <table class="table">
+          <thead>
+            <tr style="font-size:12px;">
+              <th scope="col" class="table-primary" >Ref</th>
+              <th scope="col" class="table-primary" >Material No</th>
+              <th scope="col" class="table-primary" >Description</th>
+              <th scope="col" class="table-primary" >Batch No</th>
+              <th scope="col" class="table-primary" >InLot No</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" >1</th>
+            <!--  <td>Mark</td>
+              <td>Otto</td>-->
+
+            </tr>
+            <tr>
+              <th scope="row" >2</th>
+              <!--<td>Jacob</td>
+              <td>Thornton</td>-->
+            </tr>
+            <tr>
+              <th scope="row" >3</th>
+              <!--<td>Jacob</td>
+              <td>Thornton</td>-->
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <hr>
+    <button type="button" class="btn btn-primary" id="print-btn" style=" width: 80px; height: 37px;">Print</button>
+  </div>
+  </div>
+

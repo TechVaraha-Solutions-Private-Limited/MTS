@@ -19,13 +19,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AdminModule } from './module/admin/admin.module';
-import { InnerModuleModule } from './module/admin/outer-module/inner-module/inner-module.module';
 import { OuterModuleModule } from './module/admin/outer-module/outer-module.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-
-
+import { AgGridModule } from 'ag-grid-angular';
 
 // Import Components
 import { AppComponent } from './app.component';
@@ -65,11 +63,12 @@ import { HomeComponent } from './module/admin/components/home/home.component';
     ReactiveFormsModule,
     CommonModule,
     AdminModule,
-    InnerModuleModule,
     OuterModuleModule,
     MatListModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AgGridModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SidenavComponent } from './sidenav/sidenav.component';
-import { PmComponent } from './sidenav/Rm/pm/pm.component';
 import { InwardEntryComponent } from './sidenav/inward-entry/inward-entry.component';
 import { WmComponent } from './sidenav/wm/wm.component';
 import { DispensingComponent } from './sidenav/dispensing/dispensing.component';
@@ -14,14 +13,16 @@ import { HdpeComponent } from './sidenav/hdpe/hdpe.component';
 import { MaterialTrackingComponent } from './sidenav/material-tracking/material-tracking.component';
 import { AqaComponent } from './sidenav/aqa/aqa.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon'; 
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+import { RMPMComponent } from './sidenav/rm-pm/rm-pm.component';
+import { StatusLabelPrintingComponent } from './sidenav/rm-pm/status-label-printing/status-label-printing.component'; 
 
 @NgModule({
   declarations: [
   
     SidenavComponent,
        AqaComponent,
-       PmComponent,
        InwardEntryComponent,
        WmComponent,
        DispensingComponent,
@@ -32,16 +33,21 @@ import {MatIconModule} from '@angular/material/icon';
        ReprintComponent,
        HdpeComponent,
        MaterialTrackingComponent,
-       AqaComponent
+       AqaComponent,
+       RMPMComponent,
+       StatusLabelPrintingComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatIconModule,
-
+    FormsModule
   ],
   exports: [
-    MaterialTrackingComponent 
+    MaterialTrackingComponent,
+    FormsModule,
+    MatCardModule,
+    MatIconModule,
   ]
 })
 export class OuterModuleModule { }

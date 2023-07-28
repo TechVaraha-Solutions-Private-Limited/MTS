@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./inward-entry.component.css']
 })
 export class InwardEntryComponent {
-
+ 
 }

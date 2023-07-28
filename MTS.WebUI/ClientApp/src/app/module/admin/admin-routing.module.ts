@@ -1,6 +1,6 @@
 
 import { InwardEntryComponent } from './outer-module/sidenav/inward-entry/inward-entry.component';
-import { PmComponent } from './outer-module/sidenav/Rm/pm/pm.component';
+import { RMPMComponent } from './outer-module/sidenav/rm-pm/rm-pm.component';
 import { WmComponent } from './outer-module/sidenav/wm/wm.component';
 import { AqaComponent } from './outer-module/sidenav/aqa/aqa.component';
 import { DispensingComponent } from './outer-module/sidenav/dispensing/dispensing.component';
@@ -11,6 +11,8 @@ import { ContainerMasterComponent } from './outer-module/sidenav/container-maste
 import { ReprintComponent } from './outer-module/sidenav/reprint/reprint.component';
 import { HdpeComponent } from './outer-module/sidenav/hdpe/hdpe.component';
 import { MaterialTrackingComponent } from './outer-module/sidenav/material-tracking/material-tracking.component';
+import { StatusLabelPrintingComponent } from './outer-module/sidenav/rm-pm/status-label-printing/status-label-printing.component'
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -27,7 +29,7 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'InwardEntry', component: InwardEntryComponent },
-      { path: 'rm-pm', component: PmComponent },
+      { path: 'rm-pm', component: RMPMComponent },
       { path: 'wm', component: WmComponent },
       { path: 'aqa', component: AqaComponent },
       { path: 'dispensing', component: DispensingComponent },
@@ -38,6 +40,8 @@ const routes: Routes = [
       { path: 'Reprint', component: ReprintComponent },
       { path: 'hdpe', component: HdpeComponent },
       { path: 'materialTracking', component: MaterialTrackingComponent },
+      //Rm/Pm Childs
+      { path: 'statuslabelprinting', component: StatusLabelPrintingComponent }
       
     ]
   }

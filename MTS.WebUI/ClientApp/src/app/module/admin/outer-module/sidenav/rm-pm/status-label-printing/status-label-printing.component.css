@@ -9,6 +9,7 @@
     margin-right: auto;
     background: beige;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    font-size:12px;
   }
 
   .input-group-text {
@@ -17,10 +18,12 @@
     font-weight: 500;
     padding: 5px;
   }
-
-  #saveBtn {
+  #print-btn {
     padding-bottom: 10px;
     margin-left: 70%;
+  }
+  #basic-addon2 {
+    width: 50%
   }
 }
 
@@ -47,9 +50,12 @@
     height: 40px;
     border-radius: 5px !important;
   }
-  #saveBtn {
+  #print-btn {
     padding-bottom: 10px;
     margin-left: 83%;
+  }
+  #basic-addon2 {
+    width: 72%
   }
 }
 
@@ -80,7 +86,7 @@ th,
 td {
   padding: 8px;
   border-bottom: 1px solid #ccc;
-  border: none;
+  border:none;
 }
 
 .table-primary {
