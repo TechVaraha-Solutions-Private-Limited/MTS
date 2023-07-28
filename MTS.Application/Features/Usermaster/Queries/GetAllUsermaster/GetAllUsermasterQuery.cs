@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Usermaster.Queries.GetAllUsermaster
 {
-    public record GetAllUsermasterQuery: IRequest<List<GetAllUsermasterDto>>;
+    public class GetAllUsermasterQuery: IRequest<List<GetAllUsermasterDto>>
+    {
+        public string? grnNo { get; set; }
+    }
     
 }

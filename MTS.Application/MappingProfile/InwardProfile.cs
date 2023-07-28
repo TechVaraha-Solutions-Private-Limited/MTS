@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using MTS.Application.Features.Inward.Queries.GetInwarddetails;
-using MTS.Application.Features.Usermaster.Queries.GetAllUsermaster;
 using MTS.Domain;
 using System;
 using System.Collections.Generic;
@@ -10,12 +9,11 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.MappingProfile
 {
-    public class UserMasterProfile :Profile
+    public class InwardProfile : Profile
     {
-        public UserMasterProfile()
+        public InwardProfile()
         {
-            CreateMap<GetAllUsermasterDto, TblUsermaster>().ReverseMap();
-            
+            CreateMap<GetInwarddetailsDTO, TblQuarantine>();
         }
     }
 }
