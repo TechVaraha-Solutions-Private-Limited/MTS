@@ -13,7 +13,7 @@ namespace MTS.Application.MappingProfile
     {
         public InwardProfile()
         {
-            CreateMap<GetInwarddetailsDTO, TblQuarantine>();
+            CreateMap<GetInwarddetailsDTO, TblQuarantine>().ReverseMap();
         }
     }
 }

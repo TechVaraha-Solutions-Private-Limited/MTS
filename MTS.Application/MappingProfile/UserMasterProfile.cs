@@ -15,7 +15,7 @@ namespace MTS.Application.MappingProfile
         public UserMasterProfile()
         {
             CreateMap<GetAllUsermasterDto, TblUsermaster>().ReverseMap();
-            
+
         }
     }
 }

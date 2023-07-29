@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Inward.Queries.GetInwarddetails
 {
-    public class  GetInwardDetailsQuery :IRequest<List<TblQuarantine>>
+    public class  GetInwardDetailsQuery :IRequest<List<GetInwarddetailsDTO>>
     {
         public string GrnNo { get; set; }
     }

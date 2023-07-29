@@ -19,7 +19,7 @@ namespace MTS.API.Controllers
             this._mediator = mediator;
         }
         [HttpGet("{GrnNo}")]
-        public async Task<ActionResult<List<TblQuarantine>>> GetInwardDetails(string GrnNo)
+        public async Task<ActionResult<List<GetInwarddetailsDTO>>> GetInwardDetails(string GrnNo)
         {
             var query = new GetInwardDetailsQuery { GrnNo = GrnNo };
             var grndetails = await _mediator.Send(query);

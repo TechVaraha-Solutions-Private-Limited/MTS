@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace MTS.Application.Features.Inward.Queries.GetInwarddetails
 {
-    public class GetInwardDetailsQueryHandler : IRequestHandler<GetInwardDetailsQuery, List<TblQuarantine>>
+    public class GetInwardDetailsQueryHandler : IRequestHandler<GetInwardDetailsQuery, List<GetInwarddetailsDTO>>
     {
         private readonly IMapper _mapper;
         private readonly IInwardRepository _inwardRepository;
@@ -27,12 +27,14 @@ namespace MTS.Application.Features.Inward.Queries.GetInwarddetails
             this._inwardRepository = inwardRepository;
             this._logger = logger;
         }
+     
 
-        public  async Task<List<TblQuarantine>> Handle(GetInwardDetailsQuery request, CancellationToken cancellationToken)
+        public async Task<List<GetInwarddetailsDTO>> Handle(GetInwardDetailsQuery request, CancellationToken cancellationToken)
         {
             var grndetails = await _inwardRepository.GetGrnDetails(request.GrnNo);
+            var mapdata = _mapper.Map<List<GetInwarddetailsDTO>>(grndetails);
 
-            return grndetails;
+            return mapdata;
         }
     }
 }
