@@ -21,6 +21,7 @@ namespace MTS.Persistence
             services.AddScoped<IUserMenuRepository, UserMenuRepository>();
             services.AddScoped<IInwardRepository, InwardRepository>();
             services.AddScoped<IGetCalibrationRepository, GetCalibrationRepository>();
+            services.AddScoped<IGetDevicePrinterRepository, GetDevicePrinterRepository>();
             return services;
         }
 
