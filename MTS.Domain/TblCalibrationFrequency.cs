@@ -15,8 +15,10 @@ namespace MTS.Domain
         public int REPEAT_PERIOD { get; set; }
         public DateTime INITIAL_DUE { get; set; }
         public string BALENCE_ID { get; set; }
-      
-        
+
+    
+
+
 
     }
 }
