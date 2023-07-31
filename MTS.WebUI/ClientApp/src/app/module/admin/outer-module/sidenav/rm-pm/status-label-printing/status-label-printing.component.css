@@ -7,9 +7,10 @@
     width: 19rem;
     margin-left: auto;
     margin-right: auto;
-    background: beige;
+    background: #fffff0;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    font-size:12px;
+    font-size: 12px;
+    border: 1px groove gray;
   }
 
   .input-group-text {
@@ -25,6 +26,32 @@
   #basic-addon2 {
     width: 50%
   }
+  .alert-warning {
+    height: 25px;
+    padding-top: 2px;
+    font-size: 11px;
+    width: 100%;
+    font-weight: 500;
+  }
+  .exclamation-icon {
+    height: 18px;
+    width: 20px;
+    margin-right: 7px;
+    position: relative;
+    bottom: 3px !important;
+  }
+  .dropdown-toggle, .modelClose-btn, .modelSave-btn {
+    font-size: 12px;
+  }
+  .modal
+  {
+      width:90%;
+      left:15px;
+  }
+  .table-primary
+  {
+      font-size:12px;
+  }
 }
 
 @media only screen and (min-width: 601px) {
@@ -32,11 +59,12 @@
     width: 35rem;
     margin-left: auto;
     margin-right: auto;
-    background: rgb(248, 248, 239);
+    background: #fffff0;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     padding: 1.5%;
     padding-left: 2%;
     padding-right: 2%;
+    border: 1px groove gray;
   }
 
   .input-group-text {
@@ -56,6 +84,27 @@
   }
   #basic-addon2 {
     width: 72%
+  }
+  .alert-warning {
+    height: 25px;
+    padding-top: 5px;
+    font-size: 12px;
+    width: 100%;
+    font-weight: 500;
+    padding-right:5px !important;
+    padding-left:5px !important;
+   
+  }
+  .exclamation-icon {
+    height: 18px;
+    width: 20px;
+    margin-right: 7px;
+    position: relative;
+    bottom: 3px !important;
+  }
+  .modal
+  {
+      left:10%;
   }
 }
 
@@ -85,10 +134,25 @@ table {
 th,
 td {
   padding: 8px;
-  border-bottom: 1px solid #ccc;
-  border:none;
+  border: 1px groove #ccc;
 }
 
 .table-primary {
   border-right: 1px solid gray;
+}
+
+.dropdown-item {
+  border-bottom: 0.5px groove gray
+}
+
+/*Model*/
+
+.here-link {
+  text-decoration: underline;
+  color: red;
+  bottom: 2px !important;
+  position:relative;
+}
+.alert-warning {
+  display: flex;
 }

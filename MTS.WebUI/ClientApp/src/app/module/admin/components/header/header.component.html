@@ -67,11 +67,11 @@
 
 
 <mat-toolbar>
-  <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;border-radius:2px;color:aqua;border-color:aqua">menu</mat-icon>
+  <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;border-radius:2px;color:aqua;border-color:aqua;">menu</mat-icon>
   <a href="/admin/home"><img width="35" src="/assets/images/logo.png" style="margin-right: 3px;cursor: pointer;" /></a>
-  <span><a href="/admin/home" style="text-decoration: none;"><h3 style="font-weight:500;color:white;">MTS</h3></a></span>
+  <div><a href="/admin/home" style="text-decoration: none;"><h3 style="font-weight:500;color:white;">MTS</h3></a></div>
   <span class="example-spacer"></span>
-  <button mat-button> </button>
+  
  
   <div class="dropdown" style="padding-right:0;padding-left:0;">
     <button class="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border:3px;padding:3px;">
@@ -88,7 +88,7 @@
 
   <mat-drawer-container class="example-container">
     <mat-drawer mode="side" #sidenav class="sidenav-left">
-        <div style="border-right:1px solid black"><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 10px;"> dashboard</mat-icon><h5 style="margin-top:10px">Menu</h5></a></div>   
+        <div style="border-right:1px solid black"><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 13px;"> dashboard</mat-icon><h2 style="margin-top:10px">Menu</h2></a></div>   
         <ul class="sidebar">
           <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items">
             <a  href="{{item.route}}" (click)="handleItemClick($event,item)" (click)="toggleSubMenu(item)" style="color:white;text-decoration: none;">

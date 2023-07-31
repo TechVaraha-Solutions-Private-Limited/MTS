@@ -9,7 +9,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
-
+import { HttpClientModule } from '@angular/common/http';
 // import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 @NgModule({
   declarations: [ 
@@ -30,7 +30,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatMenuModule,
     MatTableModule,
-   
+    HttpClientModule
   ],
   exports: [
     CommonModule,
@@ -43,7 +43,7 @@ import { MatTableModule } from '@angular/material/table';
     MatCardModule,
     MatMenuModule,
     MatTableModule,
-   
+    HttpClientModule
   ]
 })
 export class AdminModule { }

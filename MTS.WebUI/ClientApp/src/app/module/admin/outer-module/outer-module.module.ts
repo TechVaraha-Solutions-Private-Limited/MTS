@@ -17,7 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { RMPMComponent } from './sidenav/rm-pm/rm-pm.component';
 import { StatusLabelPrintingComponent } from './sidenav/rm-pm/status-label-printing/status-label-printing.component'; 
-
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
   
@@ -35,19 +36,25 @@ import { StatusLabelPrintingComponent } from './sidenav/rm-pm/status-label-print
        MaterialTrackingComponent,
        AqaComponent,
        RMPMComponent,
-       StatusLabelPrintingComponent
+    StatusLabelPrintingComponent,
+    
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    HttpClientModule
+
   ],
   exports: [
     MaterialTrackingComponent,
     FormsModule,
     MatCardModule,
     MatIconModule,
+    RouterModule,
+    HttpClientModule
   ]
 })
 export class OuterModuleModule { }
