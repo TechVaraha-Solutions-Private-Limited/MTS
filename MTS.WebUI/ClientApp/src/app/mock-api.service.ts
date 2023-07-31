@@ -8,17 +8,7 @@ export class MockApiService implements InMemoryDbService {
   createDb() {
     return {
       users: [
-        { id: 1, username: 'naveen', password: 'nav@123' ,session:'15', plant:'ML24',
-        // menu : [
-        //   {
-        //     title: 'new',
-        //     icon: 'menu',
-        //     preventNavigation: true,
-        //     children: [
-        //     ]
-        //   },
-        // ]  
-      },
+        { id: 1, username: 'naveen', password: 'nav@123' ,session:'15', plant:'ML24'},
         { id: 2, username: 'vignesh', password: 'vike@123',session:'15',plant:'ML11'},
         { id: 2, username: 'muthu', password: 'muthu@123',session:'15',plant:'ML22'},
       ],

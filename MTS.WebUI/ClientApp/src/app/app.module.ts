@@ -51,7 +51,9 @@ import { HomeComponent } from './module/admin/components/home/home.component';
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(MockApiService),
+    HttpClientInMemoryWebApiModule.forRoot(MockApiService, {
+      passThruUnknownUrl: true, 
+    }),
     AppRoutingModule,
     MatSidenavModule,
     MatFormFieldModule,

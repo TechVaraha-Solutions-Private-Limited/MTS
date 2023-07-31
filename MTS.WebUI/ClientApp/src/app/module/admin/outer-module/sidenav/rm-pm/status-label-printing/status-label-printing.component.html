@@ -76,7 +76,6 @@
   </div>
 </div>
 
-
 <input [(ngModel)]="grnNo" placeholder="Enter GrnNo" />
 <button (click)="getDataApi()">Get Data</button>
 
@@ -92,17 +91,13 @@
   </thead>
   <tbody>
     <tr *ngFor="let row of data">
+      
+      
       <td>{{ row.reF_No }}</td>
-      <td>{{ row.material_No }}</td>
-      <td>{{ row.description }}</td>
-      <td>{{ row.batch_No }}</td>
-      <td>{{ row.inLot_No }}</td>
+      <td>{{ row.item_Code }}</td>
+      <td>{{ row.item }}</td>
+      <td>{{ row.btno }}</td>
+      <td>{{ row.insplot }}</td>
     </tr>
   </tbody>
 </table>
-
-
-
-
-
-

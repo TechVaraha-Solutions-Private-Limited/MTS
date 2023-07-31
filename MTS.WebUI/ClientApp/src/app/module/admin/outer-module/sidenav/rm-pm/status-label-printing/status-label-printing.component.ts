@@ -41,19 +41,21 @@ export class StatusLabelPrintingComponent {
   ];
 
   grnNo: string = "";
-  data: any;
+  data: any[] = [];
+
   constructor(private slApiService: SLApiService) { }
 
   getDataApi() {
-    const dynamicApiUrl = `https://localhost:7003/api/Inward/5524009119`;
+    const dynamicApiUrl = `https://localhost:7003/api/Inward/${this.grnNo}`;
     this.slApiService.getDynamicData(dynamicApiUrl).subscribe(
       (response) => {
-        console.log(response);
-        alert('Data fetched successfully!');
         this.data = response;
+        console.log(this.data);
+        alert('Data fetched successfully!');
+        
       },
       (error) => {
-        alert('Fetching error error: ' + error.status + ' - ' + error.statusText);
+        alert('Fetching error: ' + error.status + ' - ' + error.statusText);
         console.error('Error fetching data:', error);
       }
     );
