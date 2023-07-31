@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MTS.Application.Features.Inward.Queries.GetInwarddetails;
@@ -10,6 +11,7 @@ namespace MTS.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors("all")]
     public class InwardController : ControllerBase
     {
         private readonly IMediator _mediator;
