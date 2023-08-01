@@ -11,7 +11,6 @@ namespace MTS.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("all")]
     public class InwardController : ControllerBase
     {
         private readonly IMediator _mediator;
