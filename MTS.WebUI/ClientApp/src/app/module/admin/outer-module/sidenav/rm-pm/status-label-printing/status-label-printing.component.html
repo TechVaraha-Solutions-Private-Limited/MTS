@@ -1,27 +1,62 @@
 
-<div class="card mt-4">
+<div class="card mt-3">
   <div class="card-body">
-    <h3 class="card-title " style="color:blue;margin-bottom:30px;font-weight:550;font-size:30px">Status Printing</h3>
-    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+    <div class="heading-sltprint" >
+      <div style="margin-right:70px;">
+      <h3 class="card-title" style="color:blue;font-weight:500;font-size:26px;">Status Printing</h3>
+      </div>  
+        <div class="alert alert-warning mt-2 mb-3" role="alert">
+          <mat-icon class="exclamation-icon">report_problem</mat-icon>
+          Please configure printer...<button style="background-color: transparent; border: none;"><b class="here-link" type="button" (click)="togglePrinterStatus()">Here</b></button>
+        </div>
+    </div>
 
-
-    <div class="input-group mb-3" id="pur-getid" style="margin-right:20px ;">
-      <span class="input-group-text text-dark p-1" id="basic-addon1"><b>GRN</b></span>
-      <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right: 5%;">
-      <button type="button" class="btn btn-primary" id="getbtnid">Get Data</button>
+    <div class="input-group mb-2" id="pur-getid" style="margin-right:20px ;">
+      <span class="input-group-text text-dark p-1" id="basic-addon1" style="color:red !important;font-weight:500;">GRN</span>
+      <input type="text" class="form-control" placeholder="Enter GRN" [(ngModel)]="grnNo" style="margin-right: 5%;">
+      <button type="button" class="btn btn-primary" id="getbtnid" (click)="getDataApi()">Get</button>
     </div>
 
     <hr>
 
     <!-- <div class="input-group mb-3">
-      <span class="input-group-text p-2" id="basic-addon2" style="background-color: #ffff80;">{{optionval}}</span>
-      <button class="btn btn-outline-primary" style="background-color: #D3D3D3;" type="button" (click)="togglePrinterStatus()">Change Printer</button>
-    </div>-->
+    <span class="input-group-text p-2" id="basic-addon2" style="background-color: #ffff80;">{{optionval}}</span>
+    <button class="btn btn-outline-primary" style="background-color: #D3D3D3;" type="button" (click)="togglePrinterStatus()">Change Printer</button>
+  </div>-->
 
-    <div class="alert alert-warning mt-4 mb-4" role="alert">
-      <mat-icon class="exclamation-icon">report_problem</mat-icon>
-      Please configure printer...<button style="background-color: transparent; border: none;"><b class="here-link" type="button" (click)="togglePrinterStatus()">Here</b></button>
+    <div class="table-container">
+      <table class="table" *ngIf="data">
+        <thead>
+          <tr>
+            <th class="table-primary">Select</th>
+            <th class="table-primary">Ref</th>
+            <th class="table-primary">Material No</th>
+            <th class="table-primary">Description</th>
+            <th class="table-primary">Batch No</th>
+            <th class="table-primary">InLot No</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data">
+            <td>
+              <div class="form-check text-center">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                <label class="form-check-label" for="flexCheckIndeterminate"> 
+                </label>
+              </div>
+            </td>
+            <td>{{ row.reF_No }}</td>
+            <td>{{ row.item_Code }}</td>
+            <td>{{ row.item }}</td>
+            <td>{{ row.btno }}</td>
+            <td>{{ row.insplot }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+
+   
 
     <!--Model-->
     <div class="modal" tabindex="-1" *ngIf="printerStatus" style="display: block; top: 20%;">
@@ -34,7 +69,7 @@
           <div class="modal-body">
 
 
-            <div class="input-group mb-3">
+            <div class="input-group mb-2">
               <input type="text" class="form-control" aria-label="Text input with dropdown button" [(ngModel)]="optionval" #printer>
               <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Change Printer</button>
               <ul class="dropdown-menu dropdown-menu-end">
@@ -46,19 +81,19 @@
 
 
             <!--   <div class="input-group mb-3">
-              <span class="input-group-text p-2 " id="basic-addon1">Search</span>
-              <input type="text" class="form-control" placeholder="" [(ngModel)]="optionval" #printer />
-            </div>
-            <div class="card" style="width: 15rem;">
-              <div class="card-header">
-               Printers
-               </div>
-              SELECT OPTION
-              <select class="list-group list-group-flush" [(ngModel)]="optionval" #printer>
-                <option class="list-group-item">Select</option>
-                <option class="list-group-item" [value]="item.name" *ngFor="let item of printers">{{item.name}}</option>
-              </select>
-            </div>-->
+            <span class="input-group-text p-2 " id="basic-addon1">Search</span>
+            <input type="text" class="form-control" placeholder="" [(ngModel)]="optionval" #printer />
+          </div>
+          <div class="card" style="width: 15rem;">
+            <div class="card-header">
+             Printers
+             </div>
+            SELECT OPTION
+            <select class="list-group list-group-flush" [(ngModel)]="optionval" #printer>
+              <option class="list-group-item">Select</option>
+              <option class="list-group-item" [value]="item.name" *ngFor="let item of printers">{{item.name}}</option>
+            </select>
+          </div>-->
 
 
           </div>
@@ -76,28 +111,6 @@
   </div>
 </div>
 
-<input [(ngModel)]="grnNo" placeholder="Enter GrnNo" />
-<button (click)="getDataApi()">Get Data</button>
 
-<table class="table" *ngIf="data">
-  <thead>
-    <tr>
-      <th class="table-primary">Ref</th>
-      <th class="table-primary">Material No</th>
-      <th class="table-primary">Description</th>
-      <th class="table-primary">Batch No</th>
-      <th class="table-primary">InLot No</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let row of data">
-      
-      
-      <td>{{ row.reF_No }}</td>
-      <td>{{ row.item_Code }}</td>
-      <td>{{ row.item }}</td>
-      <td>{{ row.btno }}</td>
-      <td>{{ row.insplot }}</td>
-    </tr>
-  </tbody>
-</table>
+
+

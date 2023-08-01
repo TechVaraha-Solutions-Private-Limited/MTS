@@ -21,7 +21,7 @@
 }
 @media only screen and (min-width: 601px) {
     .card {
-        width: 35rem;
+        width: 37rem;
         margin-left: auto;
         margin-right: auto;
         background: rgb(248, 248, 239);  
@@ -36,12 +36,11 @@
         font-weight:bold;
         font-weight: 400;
     }
-    #getbtnid
-    {
-        width:25%;
-        height:40px;
-        border-radius:5px !important;
-    }
+  #getbtnid {
+    width: 70px;
+    height: 35px;
+    border-radius: 5px !important;
+  }
    
 }
 .input-group-text{
@@ -54,16 +53,26 @@ background-color:rgb(158, 225, 241);
 }
 
 
+/* table.component.css */
 table {
   width: 100%;
   border-collapse: collapse;
 }
+
 th,
 td {
   padding: 8px;
-  border-bottom: 1px solid #ccc;
-  border: none;
+  border: 1px groove #ccc;
+  font-size: 12px;
 }
+
+.table-container {
+  background-color: white;
+  height: 250px;
+  width: 100%;
+  overflow-y: auto; /* This enables vertical scrolling if the table content exceeds the div height */
+}
+
 .table-primary {
   border-right: 1px solid gray;
 }

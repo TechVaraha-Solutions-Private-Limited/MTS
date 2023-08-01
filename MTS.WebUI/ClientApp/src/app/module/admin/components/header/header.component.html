@@ -1,114 +1,39 @@
 <!-- Header -->
-  <!-- <mat-toolbar>
-    <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;">menu</mat-icon>
-    <a href="/admin/home"><img width="40" src="/assets/images/logo.png" style="margin-right: 3px;cursor: pointer;" /></a>
-    <span><a href="/admin/home" style="text-decoration: none;"><h1 style="font-weight:500;color:white;">MTS</h1></a></span>
-    <span class="example-spacer"></span>
-    <button mat-flat-button color="danger" (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
-  </mat-toolbar>
-  
-   <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" #sidenav class="sidenav-left">
-        <div><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 12px;"> dashboard</mat-icon><h2>Menu</h2></a></div>   
-        <ul class="sidebar">
-          <li *ngFor="let item of menuItems" [class.children]="item.children" class="list-items">
-            <a  href="{{item.route}}" (click)="handleItemClick($event,item)" (click)="toggleSubMenu(item)" style="color:white;text-decoration: none;">
-             <h3 style="margin-left: 10px;font-size:1.2em"> {{ item.title }} <span *ngIf="item.children" [class.collapsed]="!item.expanded" style="margin-left: 10px;font-size: 13px;">▼</span></h3>
-              
-            </a>
-            <ul *ngIf="item.children && item.expanded" class="children-items" style="padding: 0px;margin: 0px;">
-              <li *ngFor="let subItem of item.children" id="subitem-listid" style="margin-top: 10px;">
-                <a href="{{subItem.route}}"  id="subitem-listid" style="color: white;font-size: 1.1em;font-weight: 450; letter-spacing: -0.7px;text-decoration: none;margin-left: 15px;">{{ subItem.title }}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-    </mat-drawer>
-    <mat-drawer-content style="color: black;">
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container> 
+<!-- <mat-toolbar>
+  <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;">menu</mat-icon>
+  <a href="/admin/home"><img width="40" src="/assets/images/logo.png" style="margin-right: 3px;cursor: pointer;" /></a>
+  <span><a href="/admin/home" style="text-decoration: none;"><h1 style="font-weight:500;color:white;">MTS</h1></a></span>
+  <span class="example-spacer"></span>
+  <button mat-flat-button color="danger" (click)="logout()"><mat-icon>logout</mat-icon>Logout</button>
+</mat-toolbar>
 
+ <mat-drawer-container class="example-container">
+  <mat-drawer mode="side" #sidenav class="sidenav-left">
+      <div><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 12px;"> dashboard</mat-icon><h2>Menu</h2></a></div>
+      <ul class="sidebar">
+        <li *ngFor="let item of menuItems" [class.children]="item.children" class="list-items">
+          <a  href="{{item.route}}" (click)="handleItemClick($event,item)" (click)="toggleSubMenu(item)" style="color:white;text-decoration: none;">
+           <h3 style="margin-left: 10px;font-size:1.2em"> {{ item.title }} <span *ngIf="item.children" [class.collapsed]="!item.expanded" style="margin-left: 10px;font-size: 13px;">▼</span></h3>
 
-  <mat-card class="card-dash" style="margin-top: 10px; margin-bottom: 10px;">
-    <mat-card-content>
-      User-specific menu items
-      <ul class="sidebar" style="list-style-type: none;padding: 0px;">
-        <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items"
-            style="text-decoration: none;">
-          <a href="{{item.route}}" (click)="handleItemClick($event, item)" (click)="toggleSubMenu(item)"
-             style="color:white;text-decoration: none;">
-            <h3 style="font-size:1.3em;color:black;margin: 0px;padding-top: 15px;padding-bottom: 2px;font-weight:550;">
-              {{ item.title }}
-              <span *ngIf="item.children" [class.collapsed]="!item.expanded"
-                    style="margin-left: 10px;font-size: 13px;">▼</span>
-              <hr style="margin: 0px;background-color: rgb(71, 71, 241);margin-top: 10px;height:2px">
-            </h3>
           </a>
-          <ul *ngIf="item.children && item.expanded" class="children-items"
-              style="padding: 0px;list-style-type: none;margin: 0px;padding-bottom: 10px;border-collapse: collapse;">
-            <li *ngFor="let subItem of item.children" id="subitem-listid"
-                style="text-align: left;border: 1px solid rgb(165, 163, 163);border-collapse: collapse;margin-left: 10px;margin-right: 10px;">
-              <span style="display: flex;">
-                <a href="{{subItem.route}}" id="anchorid" style="text-decoration: none;margin-left: 15px;">
-                  <h6 style="color: rgb(0, 24, 243);font-size: 1.1em;font-weight: 500; letter-spacing: -0.7px;">
-                    <mat-icon style="font-size: 15px;top:10px;position: relative;">label_important</mat-icon>
-                    {{ subItem.title }}
-                  </h6>
-                </a>
-              </span>
+          <ul *ngIf="item.children && item.expanded" class="children-items" style="padding: 0px;margin: 0px;">
+            <li *ngFor="let subItem of item.children" id="subitem-listid" style="margin-top: 10px;">
+              <a href="{{subItem.route}}"  id="subitem-listid" style="color: white;font-size: 1.1em;font-weight: 450; letter-spacing: -0.7px;text-decoration: none;margin-left: 15px;">{{ subItem.title }}</a>
             </li>
           </ul>
         </li>
       </ul>
-    </mat-card-content>
-  </mat-card> -->
+  </mat-drawer>
+  <mat-drawer-content style="color: black;">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
 
 
-
-<mat-toolbar>
-  <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;border-radius:2px;color:aqua;border-color:aqua;">menu</mat-icon>
-  <a href="/admin/home"><img width="35" src="/assets/images/logo.png" style="margin-right: 3px;cursor: pointer;" /></a>
-  <div><a href="/admin/home" style="text-decoration: none;"><h3 style="font-weight:500;color:white;">MTS</h3></a></div>
-  <span class="example-spacer"></span>
-  
- 
-  <div class="dropdown" style="padding-right:0;padding-left:0;">
-    <button class="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border:3px;padding:3px;">
-      <img width="30" src="/assets/images/Untitled.png" style="margin-right: 3px;cursor: pointer;border-radius: 40px;" /> {{username}}
-    </button>
-
-    <ul class="dropdown-menu" style="width: 40px!important">
-      <li><button class="dropdown-item" style='text-align:center;' (click)="logout()" >Logout</button></li>
-    </ul>
-  </div>
-
-
-</mat-toolbar>
-
-  <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" #sidenav class="sidenav-left">
-        <div style="border-right:1px solid black"><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 13px;"> dashboard</mat-icon><h2 style="margin-top:10px">Menu</h2></a></div>   
-        <ul class="sidebar">
-          <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items">
-            <a  href="{{item.route}}" (click)="handleItemClick($event,item)" (click)="toggleSubMenu(item)" style="color:white;text-decoration: none;">
-             <h3 style="margin-left: 10px;font-size:1.1em"> {{ item.title }} <span *ngIf="item.children" [class.collapsed]="!item.expanded" style="margin-left: 10px;font-size: 13px;">▼</span></h3>
-              
-            </a>
-            <ul *ngIf="item.children && item.expanded" class="children-items" style="padding: 0px;margin: 0px;">
-              <li *ngFor="let subItem of item.children" id="subitem-listid" style="margin-top: 10px;">
-                <a href="{{subItem.route}}"  id="subitem-listid" style="color: white;font-size: 1.1em;font-weight:400; letter-spacing: -0.7px;text-decoration: none;margin-left: 15px;">{{ subItem.title }}</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-    </mat-drawer>
-    <mat-drawer-content style="color: black;">
-      <router-outlet></router-outlet>
-    </mat-drawer-content>
-  </mat-drawer-container>
-
-    <!-- <ul class="sidebar" style="list-style-type: none;padding: 0px;">
+<mat-card class="card-dash" style="margin-top: 10px; margin-bottom: 10px;">
+  <mat-card-content>
+    User-specific menu items
+    <ul class="sidebar" style="list-style-type: none;padding: 0px;">
       <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items"
           style="text-decoration: none;">
         <a href="{{item.route}}" (click)="handleItemClick($event, item)" (click)="toggleSubMenu(item)"
@@ -133,4 +58,79 @@
               </a>
             </span>
           </li>
-        </ul> -->
+        </ul>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card> -->
+
+
+
+<mat-toolbar>
+  <mat-icon (click)="sidenav.toggle();" style="margin-right:12px;border-radius:2px;color:aqua;border-color:aqua;">menu</mat-icon>
+  <a href="/admin/home"><img width="35" src="/assets/images/logo.png" style="margin-right: 3px;cursor: pointer;" /></a>
+  <div><a href="/admin/home" style="text-decoration: none;"><h3 style="font-weight:500;color:white;">MTS</h3></a></div>
+  <span class="example-spacer"></span>
+
+
+  <div class="dropdown" style="padding-right:0;padding-left:0;">
+    <button class="btn btn-secondary dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: transparent; border:3px;padding:3px;">
+      <img width="30" src="/assets/images/Untitled.png" style="margin-right: 3px;cursor: pointer;border-radius: 40px;" /> {{username}}
+    </button>
+
+    <ul class="dropdown-menu" style="width: 40px!important">
+      <li><button class="dropdown-item" style='text-align:center;' (click)="logout()">Logout</button></li>
+    </ul>
+  </div>
+
+
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer mode="side" #sidenav class="sidenav-left">
+    <div style="border-right:1px solid black"><a href="" style="display: flex;height:50px;width:100%;background-color:white;color:blue;text-decoration: none;"><mat-icon style="margin:10px;margin-top: 13px;"> dashboard</mat-icon><h2 style="margin-top:10px">Menu</h2></a></div>
+    <ul class="sidebar">
+      <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items">
+        <a href="{{item.route}}" (click)="handleItemClick($event,item)" (click)="toggleSubMenu(item)" style="color:white;text-decoration: none;">
+          <h3 style="margin-left: 10px;font-size:1.1em"> {{ item.title }} <span *ngIf="item.children" [class.collapsed]="!item.expanded" style="margin-left: 10px;font-size: 13px;">▼</span></h3>
+
+        </a>
+        <ul *ngIf="item.children && item.expanded" class="children-items" style="padding: 0px;margin: 0px;">
+          <li *ngFor="let subItem of item.children" id="subitem-listid" style="margin-top: 10px;">
+            <a href="{{subItem.route}}" id="subitem-listid" style="color: white;font-size: 1.1em;font-weight:400; letter-spacing: -0.7px;text-decoration: none;margin-left: 15px;">{{ subItem.title }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content style="color: black;">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+
+<!-- <ul class="sidebar" style="list-style-type: none;padding: 0px;">
+  <li *ngFor="let item of userSpecificMenuItems" [class.children]="item.children" class="list-items"
+      style="text-decoration: none;">
+    <a href="{{item.route}}" (click)="handleItemClick($event, item)" (click)="toggleSubMenu(item)"
+       style="color:white;text-decoration: none;">
+      <h3 style="font-size:1.3em;color:black;margin: 0px;padding-top: 15px;padding-bottom: 2px;font-weight:550;">
+        {{ item.title }}
+        <span *ngIf="item.children" [class.collapsed]="!item.expanded"
+              style="margin-left: 10px;font-size: 13px;">▼</span>
+        <hr style="margin: 0px;background-color: rgb(71, 71, 241);margin-top: 10px;height:2px">
+      </h3>
+    </a>
+    <ul *ngIf="item.children && item.expanded" class="children-items"
+        style="padding: 0px;list-style-type: none;margin: 0px;padding-bottom: 10px;border-collapse: collapse;">
+      <li *ngFor="let subItem of item.children" id="subitem-listid"
+          style="text-align: left;border: 1px solid rgb(165, 163, 163);border-collapse: collapse;margin-left: 10px;margin-right: 10px;">
+        <span style="display: flex;">
+          <a href="{{subItem.route}}" id="anchorid" style="text-decoration: none;margin-left: 15px;">
+            <h6 style="color: rgb(0, 24, 243);font-size: 1.1em;font-weight: 500; letter-spacing: -0.7px;">
+              <mat-icon style="font-size: 15px;top:10px;position: relative;">label_important</mat-icon>
+              {{ subItem.title }}
+            </h6>
+          </a>
+        </span>
+      </li>
+    </ul> -->

@@ -1,89 +1,63 @@
 
-<div class="card mt-4">
+<div class="card mt-3 mb-3">
   <div class="card-body">
-    <h1 class="card-title " style="color:blue;margin-bottom:30px;font-weight:550;font-size:30px">Inwarding</h1>
+    <h1 class="card-title mb-4" style="color:blue;font-weight:500;font-size:26px">Inwarding</h1>
     <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
 
-    <div class="input-group mb-3" id="pur-getid" style="margin-right:20px ;">
-      <span class="input-group-text p-1" id="basic-addon1">GrnNo</span>
-      <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right: 5%;">
-      <button type="button" class="btn btn-primary" id="getbtnid">Get</button>
+    <div class="input-group mb-3" id="pur-getid" style="margin-right:20px;">
+      <span class="input-group-text p-1" id="basic-addon1" style="color:red;font-weight:500">GRN</span>
+      <input type="text" class="form-control" placeholder="Enter GRN" [(ngModel)]="grnNo" style="margin-right: 5%;">
+      <button type="button" class="btn btn-primary" id="getbtnid" (click)="getDataApi()">Get</button>
     </div>
 
-    <!--   <div class="input-group mb-3">
-     <label class="input-group-text" for="inputGroupSelect01">Material Code</label>
-     <select class="form-select" id="inputGroupSelect01">
-       <option selected>Choose...</option>
-       <option value="1">One</option>
-       <option value="2">Two</option>
-       <option value="3">Three</option>
-     </select>
-   </div>-->
-    <!--  <div class="input-group mb-3">
-   <span class="input-group-text p-2 " id="basic-addon1">Description</span>
-   <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
-  </div>-->
+
     <!--Table-->
-    <div>
-      <div class="table-responsive" style="background-color:white;margin-bottom:5%">
-        <table class="table">
-          <thead>
-            <tr>
-              <!--<th scope="col" class="table-primary">Item Code</th>-->
-              <th scope="col" class="table-primary">Item Code</th>
-              <th scope="col" class="table-primary">ARN</th>
-              <th scope="col" class="table-primary">Item</th>
-
-              <!-- <th scope="col" class="table-primary">InLot No</th>-->
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <!--  <td>Mark</td>
-            <td>Otto</td>-->
-
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <!--<td>Jacob</td>
-            <td>Thornton</td>-->
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <!--<td>Jacob</td>
-            <td>Thornton</td>-->
-            </tr>
-
-          </tbody>
-        </table>
-      </div>
+    <div class="table-container">
+      <table class="table" *ngIf="data">
+        <thead>
+          <tr>
+            <th class="table-primary">ItemCode</th>
+            <th class="table-primary">ARN</th>
+            <th class="table-primary">Item</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of data">
+            <td>{{ row.item_Code }}</td>
+            <td>{{ row.ARN }}</td>
+            <td>{{ row.item }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="input-group mb-3">
+
+    <div class="input-group mb-2 mt-3">
       <span class="input-group-text p-2" id="basic-addon1">Weighting Scale</span>
       <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div class="input-group mb-3">
+    <div class="input-group mb-2">
       <span class="input-group-text p-2" id="basic-addon1">Grs Wt</span>
       <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right: 3%;">
       <span class="input-group-text p-2" id="basic-addon1" style="margin-left: 3%;">Containers</span>
       <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div class="input-group mb-3">
+
+    <div class="input-group mb-2">
       <span class="input-group-text p-2" id="basic-addon1">Net Wt</span>
-      <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right:3%">
-      <span class="input-group-text p-2" id="basic-addon1" style="margin-left:3%;">Lbl Wt</span>
+      <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" style="margin-right: 3%;">
+      <span class="input-group-text p-2" id="basic-addon1" style="margin-left: 3%;">Lbl Wt</span>
       <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
     </div>
-    <div class="input-group mb-3">
+
+    <div class="input-group mb-2">
       <span class="input-group-text p-2" id="basic-addon1">Scan Barcode</span>
       <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
     </div>
     <hr>
-    <h6 style="width:100px;height:40px;">Count :</h6>
+    <h6 style="font-size:16px;font-weight:500">Count :</h6>
   </div>
   </div>
 

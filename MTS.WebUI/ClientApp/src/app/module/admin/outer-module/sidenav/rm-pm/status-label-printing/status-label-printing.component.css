@@ -52,11 +52,14 @@
   {
       font-size:12px;
   }
+    .heading-sltprint {
+        display: block;
+    }
 }
 
 @media only screen and (min-width: 601px) {
   .card {
-    width: 35rem;
+    width: 37rem;
     margin-left: auto;
     margin-right: auto;
     background: #fffff0;
@@ -74,8 +77,8 @@
   }
 
   #getbtnid {
-    width: 25%;
-    height: 40px;
+    width: 70px;
+    height: 37px;
     border-radius: 5px !important;
   }
   #print-btn {
@@ -89,11 +92,11 @@
     height: 25px;
     padding-top: 5px;
     font-size: 12px;
-    width: 100%;
+    width: 50%;
     font-weight: 500;
     padding-right:5px !important;
     padding-left:5px !important;
-   
+    bottom:8px;
   }
   .exclamation-icon {
     height: 18px;
@@ -106,6 +109,9 @@
   {
       left:10%;
   }
+    .heading-sltprint {
+        display: flex;
+    }
 }
 
 .input-group-text {
@@ -135,8 +141,15 @@ th,
 td {
   padding: 8px;
   border: 1px groove #ccc;
+  font-size:12px;
 }
 
+.table-container {
+  background-color:white;
+  height: 250px;
+  width: 100%;
+  overflow-y: auto; /* This enables vertical scrolling if the table content exceeds the div height */
+}
 .table-primary {
   border-right: 1px solid gray;
 }
@@ -156,3 +169,4 @@ td {
 .alert-warning {
   display: flex;
 }
+

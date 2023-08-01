@@ -12,13 +12,16 @@ import { ReprintComponent } from './sidenav/reprint/reprint.component';
 import { HdpeComponent } from './sidenav/hdpe/hdpe.component';
 import { MaterialTrackingComponent } from './sidenav/material-tracking/material-tracking.component';
 import { AqaComponent } from './sidenav/aqa/aqa.component';
+import { RMPMComponent } from './sidenav/rm-pm/rm-pm.component';
+import { StatusLabelPrintingComponent } from './sidenav/rm-pm/status-label-printing/status-label-printing.component'; 
+
+
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
-import { RMPMComponent } from './sidenav/rm-pm/rm-pm.component';
-import { StatusLabelPrintingComponent } from './sidenav/rm-pm/status-label-printing/status-label-printing.component'; 
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [
   
@@ -45,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     FormsModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
 
   ],
   exports: [
@@ -54,7 +58,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatIconModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    LayoutModule
   ]
 })
 export class OuterModuleModule { }

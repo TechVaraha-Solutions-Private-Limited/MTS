@@ -16,6 +16,7 @@ export class StatusLabelPrintingComponent {
   toggleclose() {
     this.printerStatus = false;
   }
+
   printers = [
     { id: 1, name: "printer1" },
     { id: 2, name: "Printer2" },
@@ -32,14 +33,6 @@ export class StatusLabelPrintingComponent {
     this.optionval = option;
   }
 
-  tableData = [
-    { column1: 'Data 1', column2: 'Data A', column3: 'Data B', column4: 'Data C', column5: 'Data E' },
-    { column1: 'Data 2', column2: 'Data B' },
-    { column1: 'Data 2', column2: 'Data B' },
-    { column1: 'Data 2', column2: 'Data B' },
-    { column1: 'Data 2', column2: 'Data B' },
-  ];
-
   grnNo: string = "";
   data: any[] = [];
 
@@ -50,9 +43,8 @@ export class StatusLabelPrintingComponent {
     this.slApiService.getDynamicData(dynamicApiUrl).subscribe(
       (response) => {
         this.data = response;
-        console.log(this.data);
-        alert('Data fetched successfully!');
-        
+      /*  console.log(this.data);
+        alert('Data fetched successfully!');*/     
       },
       (error) => {
         alert('Fetching error: ' + error.status + ' - ' + error.statusText);
