@@ -24,4 +24,8 @@ public class MtstestContext :DbContext
     public virtual DbSet<TblCalibrationWeights> TblCalibrationWeights { get; set;}
     public virtual DbSet<TblDeviceNprinter> TblDeviceNprinter { get; set; }
 
+    public DbSet<Quarantines> Quarantines { get; set; }
+
+    public DbSet<Log> Logs { get; set; }
+
 }
