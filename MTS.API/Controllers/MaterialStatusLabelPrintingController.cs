@@ -19,14 +19,13 @@ namespace MTS.API.Controllers
             this._objRepository = objRepository;
             this._mapper = mapper;
         }
-        [HttpGet("CheckGRNData")]
-        public async Task<IActionResult> CheckGRNData([FromQuery] QuarantineDTO quarantineDTO)
+        [HttpGet("GrnNo/{GRNNo}")]
+        public async Task<IActionResult> CheckGRNData(string GRNNo)
         {
             //var appException = new AppException();
             try
             {
-                var result = await _objRepository.CheckGRNData
-                       (_mapper.Map<Quarantines>(quarantineDTO));
+                var result = await _objRepository.GetGrnData(GRNNo);
 
                 return Ok(result);
             }

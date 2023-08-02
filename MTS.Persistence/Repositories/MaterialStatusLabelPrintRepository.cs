@@ -355,9 +355,43 @@ namespace MTS.Persistence.Repositories
             return ObjItemMaster;
         }
 
+        public async Task<Tuple<List<SAPQuarantineFromSAP>, List<Quarantines>>> GetGrnData(string GRNNo)
+        {
+            var result = new Tuple<List<SAPQuarantineFromSAP>, List<Quarantines>>(null, null);
+
+            List<Quarantines> GRNData = QuarantinesList();
+            List<ITEMMASTER> ObjItemMaster = ITEMMASTERList();
+            try
+            {
+                sAPQuarantinesListSAP = sapQuarantinefrmSAPList();
+
+                GRNData = _context.Quarantines.Where(x => x.GRNNO == GRNNo).Distinct().ToList();
+                SAPQuarantine sAPQuarantine = objsapQuarantine();
+                sAPQuarantine.MBLNR = GRNNo;
+                sAPQuarantinesListSAP = await GetSAPQuarantine(sAPQuarantine, sapQuarantinefrmSAPList());
+                if (sAPQuarantinesListSAP.Count > 0)
+                {
+
+                    //result = new Tuple<List<Quarantines>, List<SAPQuarantineFromSAP>>(null, sAPQuarantinesListSAP);
+
+                }
+                if (GRNData.Count != 0)
+                {
+                    
+                    await UpdateQuarantineTable(sAPQuarantinesListSAP, ObjItemMaster);
+                   
+
+                }
+                result = new Tuple<List<SAPQuarantineFromSAP>, List<Quarantines>>(sAPQuarantinesListSAP, GRNData);
 
 
-
-
+            }
+            catch (Exception ex)
+            {
+               
+                throw ex;
+            }
+            return result;
+        }
     }
 }

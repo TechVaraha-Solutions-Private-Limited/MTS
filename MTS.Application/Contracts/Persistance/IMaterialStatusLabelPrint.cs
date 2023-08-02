@@ -11,6 +11,7 @@ namespace MTS.Application.Contracts.Persistance
 {
     public interface IMaterialStatusLabelPrint
     {
+        Task<Tuple<List<SAPQuarantineFromSAP>, List<Quarantines>>> GetGrnData(string GRNNo);
         Task<Tuple<List<SAPQuarantineFromSAP>, List<Quarantines>>> CheckGRNData(Quarantines quarantine);
         Task<List<ITEMMASTER>> GetItemCode(ITEMMASTER _itemMaster, List<ITEMMASTER> ObjItemMaster);
         Task<string> GetPIP(DeviceNPrinter _deviceNPrinter);
