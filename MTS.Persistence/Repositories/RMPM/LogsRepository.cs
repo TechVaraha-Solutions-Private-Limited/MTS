@@ -1,4 +1,5 @@
-﻿using MTS.Application.Contracts.Logging;
+﻿using Microsoft.EntityFrameworkCore;
+using MTS.Application.Contracts.Logging;
 using MTS.Domain;
 using MTS.Persistence.DatabaseContext;
 using System;
